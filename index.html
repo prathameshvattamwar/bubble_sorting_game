@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Sort Fun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bg-music" src="assets/bg-music.mp3" loop></audio>
+
+    <div id="app-container">
+        <div id="home-screen" class="screen active">
+            <h1 class="main-title">
+                <span class="c1">C</span><span class="c2">O</span><span class="c3">L</span><span class="c4">O</span><span class="c5">R</span>
+                <br> 
+                <span class="c6">S</span><span class="c7">O</span><span class="c8">R</span><span class="c1">T</span>
+            </h1>
+            <div class="difficulty-selector">
+                <h2 class="sub-title">CHOOSE DIFFICULTY</h2>
+                <div class="difficulty-options">
+                    <button class="difficulty-btn" data-difficulty="easy">EASY</button>
+                    <button class="difficulty-btn" data-difficulty="medium">MEDIUM</button>
+                    <button class="difficulty-btn" data-difficulty="hard">HARD</button>
+                </div>
+            </div>
+            <button id="start-game-btn" class="action-btn">START GAME</button>
+            <div class="how-to-play">
+                <h3 class="sub-title">HOW TO PLAY</h3>
+                <p>Drag and drop balls to sort them by color. A tube must be empty or its top ball must match the color of the ball you are moving. Fill each tube with a single color to win!</p>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <header class="game-header">
+                <div class="ui-item">
+                    <span>LEVEL</span>
+                    <span id="level">1</span>
+                </div>
+                <div class="ui-item">
+                    <span>MOVES</span>
+                    <span id="moves">0</span>
+                </div>
+                <div class="ui-item">
+                    <span>TIME</span>
+                    <span id="timer">00:00</span>
+                </div>
+            </header>
+            <main id="game-board-container">
+                <div id="game-board"></div>
+            </main>
+            <footer class="game-controls">
+                <button id="pause-btn" class="control-btn"><i class="fas fa-pause"></i></button>
+                <button id="exit-btn" class="control-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </footer>
+        </div>
+    </div>
+    
+    <div id="pause-modal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">
+                <span class="c2">P</span><span class="c3">A</span><span class="c4">U</span><span class="c5">S</span><span class="c6">E</span><span class="c7">D</span>
+            </h2>
+            <div class="modal-buttons">
+                <button id="resume-btn" class="action-btn">RESUME</button>
+                <button id="exit-modal-btn" class="action-btn secondary">EXIT TO MENU</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="win-modal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">
+                <span class="c1">L</span><span class="c2">E</span><span class="c3">V</span><span class="c4">E</span><span class="c5">L</span>
+                <span class="c6">U</span><span class="c7">P</span><span class="c8">!</span>
+            </h2>
+            <p>Moves: <span id="win-moves"></span></p>
+            <p>Time: <span id="win-time"></span></p>
+            <button id="next-level-btn" class="action-btn">NEXT LEVEL</button>
+        </div>
+    </div>
+    
+    <div id="game-complete-modal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">
+                <span class="c1">Y</span><span class="c2">O</span><span class="c3">U</span>
+                <span class="c4">W</span><span class="c5">I</span><span class="c6">N</span><span class="c7">!</span>
+            </h2>
+            <p>Congratulations! You've conquered all levels.</p>
+            <button id="play-again-btn" class="action-btn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
