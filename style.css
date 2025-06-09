@@ -259,7 +259,7 @@ body {
 .tube {
   width: 100%;
   aspect-ratio: 1 / 4;
-  max-height: 240px;
+  max-height: 165px;
   background: rgba(255, 255, 255, 0.3);
   border: 3px solid rgb(226 226 226 / 80%);
   border-top: none;
